@@ -21,7 +21,7 @@ E por último, rotas do tipo OPTIONS
 
 
 
-*/
+
 
 // 'middleware' =>'auth'     ---- garante que somente um usuario autenticado no sitema acesse a rota
 Route::group(['prefix' => 'painel', 'middleware' =>'auth'],function(){  //Define um prefixo para a rota exemplo wwww.teste.com/painel/ ... geupo1 ou grupo2 painel ja esta pre definido para o grupo
@@ -84,3 +84,10 @@ Route::get('/', function () {
     return redirect()->route('rota.nomeada');  // Redireciona para a rota identificada com name
 });
 
+
+*/
+
+Route::get('/categoria/{id}','Site\SiteController@categoria');
+Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp'); // rota com valor opcional por isso o ? depois do id
+Route::get('/', 'Site\SiteController@index'); // Direciona para a rota controler metodo index.
+Route::get('/contato', 'Site\SiteController@contato'); 
