@@ -8,6 +8,27 @@ use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
+    public function __construct()
+    {
+        /*
+        //$this->middleware('auth');
+        $this->middleware('auth')   // middleware('auth') requer que o ususuario esteja logado
+        ->only([ // passe o filtro no contato e categoria, requer que esteja logado para acesso nas funcoes
+            //'contato',
+            'categoria'
+        ]);
+    
+        */
+
+        /*
+        $this->middleware('auth')
+            ->except([ // Todos o metodos requer autorizacao de usuaario exceto index e contato
+                'index',
+                'contato'
+            ]);
+
+         */   
+    }
     public function index()
     {
     	return 'Home Page do Site';

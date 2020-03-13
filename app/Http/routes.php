@@ -87,7 +87,13 @@ Route::get('/', function () {
 
 */
 
+// middleware('auth') = filtro de autenticacao
+// 
+
+Route::resource('/painel/produtos','painel\ProdutoController');
+
+
 Route::get('/categoria/{id}','Site\SiteController@categoria');
 Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp'); // rota com valor opcional por isso o ? depois do id
 Route::get('/', 'Site\SiteController@index'); // Direciona para a rota controler metodo index.
-Route::get('/contato', 'Site\SiteController@contato'); 
+Route::get('/contato', 'Site\SiteController@contato');
