@@ -34,7 +34,12 @@ class SiteController extends Controller
         $title = 'Titulo Teste';
 
           $xss  = '<script> alert("Ataque XSS");</script>'; 
-    	return view('site.home.index', compact('title','xss')); // Exibe a view e no segundo parametro passa um valor para o tamplate.
+
+          $var1 = '123';
+
+          $arrayData = [12,23,34,45,56,76,78,98,109];
+
+    	return view('site.home.index', compact('title','xss','var1','arrayData')); // Exibe a view e no segundo parametro passa um valor para o tamplate.
     }
 
     public function contato()
