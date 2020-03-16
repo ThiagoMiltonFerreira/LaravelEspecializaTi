@@ -26,7 +26,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return 'Create';
     }
 
     /**
@@ -35,9 +35,9 @@ class ProdutoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) // Request $request ja faz automaticamente o $request = new $request();  ja cria o objeto
     {
-        //
+        
     }
 
     /**

@@ -31,12 +31,15 @@ class SiteController extends Controller
     }
     public function index()
     {
-    	return 'Home Page do Site';
+        $title = 'Titulo Teste';
+
+          $xss  = '<script> alert("Ataque XSS");</script>'; 
+    	return view('site.home.index', compact('title','xss')); // Exibe a view e no segundo parametro passa um valor para o tamplate.
     }
 
     public function contato()
     {
-    	return 'Pagina contato';
+    	return view('site.contact.index');
 
     }
 

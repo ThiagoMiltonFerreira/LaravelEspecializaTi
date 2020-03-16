@@ -90,8 +90,7 @@ Route::get('/', function () {
 // middleware('auth') = filtro de autenticacao
 // 
 
-Route::resource('/painel/produtos','painel\ProdutoController');
-
+Route::resource('/painel/produtos','painel\ProdutoController'); // controller Resource de auxilio ao crud
 
 Route::get('/categoria/{id}','Site\SiteController@categoria');
 Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp'); // rota com valor opcional por isso o ? depois do id
