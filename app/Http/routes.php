@@ -87,12 +87,32 @@ Route::get('/', function () {
 
 */
 
-// middleware('auth') = filtro de autenticacao
+// middleware('auth') = filtro de autenticacao      /insta
 // 
 
-Route::resource('/painel/produtos','painel\ProdutoController'); // controller Resource de auxilio ao crud
+Route::resource('/site/users', 'Site\UserController'); //Rota resource criaçao de CRUD
 
+//Fora ao curso
+//Rotas POST
+Route::post('/site/user/create','Site\UserController@create')->name('postUser.create');
+Route::post('/site/user/edit','Site\UserController@update')->name('postUser.update');
+
+//Rotas GET  
+Route::get('/site/user/create','Site\UserController@viewUserCreate')->name('getUser.create');
+Route::get('/site/user/edit/{id}','Site\UserController@show')->name('getUser.update');
+Route::get('/site/user/delete/{id}','Site\UserController@destroy')->name('getUser.delete');
+
+
+// curso
+Route::get('/painel/produtos/testes', 'Painel\ProdutoController@tests');
+Route::resource('/painel/produtos','painel\ProdutoController'); // controller Resource de auxilio ao crud
 Route::get('/categoria/{id}','Site\SiteController@categoria');
 Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp'); // rota com valor opcional por isso o ? depois do id
 Route::get('/', 'Site\SiteController@index'); // Direciona para a rota controler metodo index.
 Route::get('/contato', 'Site\SiteController@contato');
+
+
+
+
+
+

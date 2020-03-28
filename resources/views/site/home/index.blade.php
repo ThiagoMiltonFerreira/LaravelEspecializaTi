@@ -1,7 +1,7 @@
 @extends('site.templates.template1') <!-- Extende do template -->
 
 <!-- tudo que for feito na secion content sera enviado para o template1 usado pelo codigo da linha 1  -->
-@section('content') <!-- inicia a sessao -->
+@section('content') <!-- inicia a sessao yield do template -->
 
 	<h1> Home Page do Site! </h1>   <!-- conteudo da sessao -->
 	<p>variavel teste: {{$teste or 'Nao exite variavel teste'}}</p>
@@ -72,3 +72,8 @@
 
 @endsection
 
+@push('scripts') <!-- script dinamico css do stack do template   -->
+	
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+@endpush

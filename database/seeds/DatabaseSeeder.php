@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // seeder inserçao altomatica no banco, codigo abaixo chama a seeder user tableSeeder
+    	$this->call(UserTableSeeder::class);
     }
 }
