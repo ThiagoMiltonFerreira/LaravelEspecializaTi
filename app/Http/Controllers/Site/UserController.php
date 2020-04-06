@@ -16,6 +16,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $user;
+    private $userPorPag = 5;
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -24,7 +25,8 @@ class UserController extends Controller
 
     public function index(User $user)
     {
-        $users = $user->all();
+        // $users = $user->all(); Lista todos usuarios
+        $users = $user->paginate($this->userPorPag);
 
         return view('painel.User.user', compact('users'));
 

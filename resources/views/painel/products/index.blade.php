@@ -49,6 +49,9 @@
 	@endforeach
 
 </table>
+
+{!! $products->links() !!} <!-- mostra os botoes de paginas que vem dentro do products do controller  $this->product->paginate(3);  3 intens por pagina-->
+
 </div>
 @endsection
 

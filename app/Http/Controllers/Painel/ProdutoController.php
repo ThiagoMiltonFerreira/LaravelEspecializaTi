@@ -16,6 +16,7 @@ class ProdutoController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $product;
+    private $totalPage=3;
 
     public function __construct(Product $product)  //(Product $Product) e o mesmo que $product = new Product();
     {
@@ -25,8 +26,8 @@ class ProdutoController extends Controller
     public function index() 
     {
         
-       $products = $this->product->all(); //retorna todos os produtos do model produtos
-
+       //$products = $this->product->all(); //retorna todos os produtos do model produtos
+        $products = $this->product->paginate($this->totalPage); // Mostra todos os produtos paginados de acordo com a quantidade de pagina desejada $this->totalPage = 3
         return view('painel.products.index',compact('products'));
     }
 
