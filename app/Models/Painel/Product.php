@@ -14,6 +14,18 @@ class Product extends Model
 	]; 
 	//protected $guarded = ['admin']; //quais campos nao podem ser inseridos no banco pelo array
 
+	//validacao de campos
+	public $rules = [
+
+		'name' 			=> 'required|min:3|max:100',
+		'number' 		=> 'required|numeric',
+		'category' 		=> 'required',
+		'description'	=> 'min:3|max:254',
+
+
+	];
+
+
 
 }
 

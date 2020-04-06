@@ -105,7 +105,21 @@ Route::get('/site/user/delete/{id}','Site\UserController@destroy')->name('getUse
 
 // curso
 Route::get('/painel/produtos/testes', 'Painel\ProdutoController@tests');
-Route::resource('/painel/produtos','painel\ProdutoController'); // controller Resource de auxilio ao crud
+Route::resource('/produtos','painel\ProdutoController'); // controller Resource de auxilio ao crud name padrao da roda e produtos, a route resource ja vem parametros pre-definidos
+/*
+Verbo	URL	Ação	Nome da Rota
+GET	/authors	Index	authors.index
+GET	/authors/create	Criar	authors.create
+POST	/authors	Armazenar	authors.store
+GET	/authors/author	Exibir	authors.show
+GET	/authors/{author}/edit	Editar	authors.edit
+PUT/PATCH	/authors/{author}	Atualizar	authors.update
+GET	/authors/{author}	Deletar	authors.destroy
+
+
+*** ROTA DE EDIÇÃO ULTILIZA METHOD PUTH
+
+*/
 Route::get('/categoria/{id}','Site\SiteController@categoria');
 Route::get('/categoria2/{id?}','Site\SiteController@categoriaOp'); // rota com valor opcional por isso o ? depois do id
 Route::get('/', 'Site\SiteController@index'); // Direciona para a rota controler metodo index.

@@ -42,11 +42,13 @@ class UserController extends Controller
        return view('painel.User.userCreate',compact('title'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
         
         $_POST['password'] = base64_encode($_POST['password']);
         $data = $_POST;
+        //valida formulario de acordo com os requisitos do atributo  rules da model
+        $this->validate($request,$this->user->rules); // valor a ser validado , array de validaçao esta na model
         $insertUser = $this->user->create($data);
         
         if($insertUser)
@@ -98,7 +100,7 @@ class UserController extends Controller
         else
         {
             $title = 'Editar usuario.';
-            $data = $this->user->find($id);
+            $data = $this->user->find($id); 
             return view('painel.User.userCreate', compact('title','data'));
           
         }
